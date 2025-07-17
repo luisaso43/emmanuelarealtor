@@ -196,79 +196,81 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contacto" className="py-20 bg-gradient-to-r from-gray-50 to-gray-100">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
-          <div>
-            <h2 className="text-4xl font-light mb-6 text-gray-800">Contacto</h2>
-            <p className="text-lg text-gray-700 mb-4">
-              Llámanos al: <a href="tel:+13054957436" className="text-gray-800 underline">+1 (305) 495-7436</a>
-            </p>
-            <p className="text-lg text-gray-700 mb-4">
-              Escríbenos a: <a href="mailto:info@emmanuela.com" className="text-gray-800 underline">info@emmanuela.com</a>
-            </p>
-            <p className="text-lg text-gray-700 mb-4">
-              Dirección: 1234 Calle Principal, Miami, FL
-            </p>
-          </div>
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <input
-              type="text"
-              name="nombre"
-              placeholder="Tu nombre completo"
-              required
-              className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 placeholder-gray-500"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Tu correo electrónico"
-              required
-              className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 placeholder-gray-500"
-            />
-            <input
-              type="tel"
-              name="telefono"
-              placeholder="Tu número de teléfono"
-              className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 placeholder-gray-500"
-            />
-            <select
-              name="tipo_servicio"
-              required
-              className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 pr-8"
-            >
-              <option value="">Selecciona el tipo de servicio</option>
-              <option value="compra">Compra de propiedad</option>
-              <option value="venta">Venta de propiedad</option>
-              <option value="consultoria">Consultoría inmobiliaria</option>
-              <option value="otro">Otro</option>
-            </select>
-            <textarea
-              name="mensaje"
-              placeholder="Cuéntame más sobre lo que necesitas..."
-              rows={4}
-              maxLength={500}
-              className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 placeholder-gray-500 resize-none"
-            ></textarea>
-            <button
-              type="submit"
-              className="w-full bg-gray-800 hover:bg-gray-700 text-white py-4 rounded-lg font-semibold transition-colors duration-300 whitespace-nowrap cursor-pointer"
-            >
-              Enviar Mensaje
-            </button>
+{/* Contact Section */}
+<section id="contacto" className="py-20 bg-gradient-to-r from-gray-50 to-gray-100">
+  <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+    <div>
+      <h2 className="text-4xl font-light mb-6 text-gray-800">Ponte en contacto conmigo</h2>
+      <p className="text-lg text-gray-700 mb-2">
+        📍 10200 NW 25th St Suite: A100<br />
+        Doral, FL 33172
+      </p>
+      <p className="text-lg text-gray-700 mb-2">
+        📞 <a href="tel:+19548185739" className="text-gray-800 underline">+1 (954) 818-5739</a>
+      </p>
+      <p className="text-lg text-gray-700 mb-4">
+        ✉️ <a href="mailto:emmanuelarealtor@outlook.com" className="text-gray-800 underline">emmanuelarealtor@outlook.com</a>
+      </p>
+    </div>
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <input
+        type="text"
+        name="nombre"
+        placeholder="Tu nombre completo"
+        required
+        className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 placeholder-gray-500"
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Tu correo electrónico"
+        required
+        className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 placeholder-gray-500"
+      />
+      <input
+        type="tel"
+        name="telefono"
+        placeholder="Tu número de teléfono"
+        className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 placeholder-gray-500"
+      />
+      <select
+        name="tipo_servicio"
+        required
+        className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 pr-8"
+      >
+        <option value="">Selecciona el tipo de servicio</option>
+        <option value="compra">Compra de propiedad</option>
+        <option value="venta">Venta de propiedad</option>
+        <option value="consultoria">Consultoría inmobiliaria</option>
+        <option value="otro">Otro</option>
+      </select>
+      <textarea
+        name="mensaje"
+        placeholder="Cuéntame más sobre lo que necesitas..."
+        rows={4}
+        maxLength={500}
+        className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 placeholder-gray-500 resize-none"
+      ></textarea>
+      <button
+        type="submit"
+        className="w-full bg-gray-800 hover:bg-gray-700 text-white py-4 rounded-lg font-semibold transition-colors duration-300 whitespace-nowrap cursor-pointer"
+      >
+        Enviar Mensaje
+      </button>
 
-            {submitted && (
-              <p className="text-green-600 font-medium mt-4">
-                ✅ Tu mensaje fue enviado correctamente.
-              </p>
-            )}
-            {error && (
-              <p className="text-red-600 font-medium mt-4">
-                ❌ Ocurrió un error. Inténtalo de nuevo.
-              </p>
-            )}
-          </form>
-        </div>
-      </section>
+      {submitted && (
+        <p className="text-green-600 font-medium mt-4">
+          ✅ Tu mensaje fue enviado correctamente.
+        </p>
+      )}
+      {error && (
+        <p className="text-red-600 font-medium mt-4">
+          ❌ Ocurrió un error. Inténtalo de nuevo.
+        </p>
+      )}
+    </form>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="bg-white border-t border-gray-200 text-gray-800 py-8">
