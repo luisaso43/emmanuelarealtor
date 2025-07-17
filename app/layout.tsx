@@ -36,7 +36,7 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Emmanuela Suarez - Agente Inmobiliaria de Lujo Miami",
-  description: "Especialista en propiedades de lujo en Miami. Más de 10 años de experiencia ayudando a encontrar el hogar perfecto.",
+  description: "Especialista en propiedades de lujo en Miami. Más de 2 años de experiencia ayudando a encontrar el hogar perfecto.",
 };
 
 export default function RootLayout({
