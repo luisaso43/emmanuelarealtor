@@ -117,8 +117,9 @@ export default function Home() {
             </div>
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
-                Con más de 2 años de experiencia en el mercado inmobiliario de Miami, me especializo en 
-                propiedades de lujo y ayudo a mis clientes a encontrar no solo una casa, sino el hogar de sus sueños.
+             Con más de 2 años de experiencia en el mercado inmobiliario de Miami, me especializo en ayudar a familias a encontrar su hogar ideal. Mi enfoque se basa en brindar un servicio personalizado, transparente y centrado en las necesidades específicas de cada cliente.
+
+
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Mi enfoque personalizado y conocimiento profundo del mercado de Miami me permite ofrecer 
