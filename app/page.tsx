@@ -173,110 +173,147 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contacto" className="py-20 bg-gradient-to-r from-gray-50 to-gray-100">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-800">Contacto</h2>
-            <div className="w-24 h-1 bg-gray-700 mx-auto"></div>
-          </div>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-2xl font-semibold mb-6 text-gray-800">Hablemos de tu próximo hogar</h3>
-              <p className="text-gray-700 mb-8 leading-relaxed">
-                Estoy aquí para ayudarte en cada paso del proceso. Contáctame hoy mismo para 
-                una consulta gratuita y descubre cómo puedo hacer realidad tus sueños inmobiliarios.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <div className="w-6 h-6 flex items-center justify-center mr-4">
-                    <i className="ri-phone-line text-gray-700"></i>
-                  </div>
-                  <span className="text-gray-700">+1 (954) 818-5739</span>
+     import { useState } from 'react';
+
+export default function ContactSection() {
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitted(false);
+    setError(false);
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    const response = await fetch('https://formspree.io/f/xldnrvjz', {
+      method: 'POST',
+      body: data,
+      headers: {
+        Accept: 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      setSubmitted(true);
+      form.reset();
+    } else {
+      setError(true);
+    }
+  };
+
+  return (
+    <section id="contacto" className="py-20 bg-gradient-to-r from-gray-50 to-gray-100">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-800">Contacto</h2>
+          <div className="w-24 h-1 bg-gray-700 mx-auto"></div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-12">
+          <div>
+            {/* Información de contacto... */}
+            <h3 className="text-2xl font-semibold mb-6 text-gray-800">Hablemos de tu próximo hogar</h3>
+            <p className="text-gray-700 mb-8 leading-relaxed">
+              Estoy aquí para ayudarte en cada paso del proceso. Contáctame hoy mismo para 
+              una consulta gratuita y descubre cómo puedo hacer realidad tus sueños inmobiliarios.
+            </p>
+            <div className="space-y-4">
+              <div className="flex items-center">
+                <div className="w-6 h-6 flex items-center justify-center mr-4">
+                  <i className="ri-phone-line text-gray-700"></i>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-6 h-6 flex items-center justify-center mr-4">
-                    <i className="ri-mail-line text-gray-700"></i>
-                  </div>
-                  <span className="text-gray-700">emmanuelarealtor@outlook.com</span>
+                <span className="text-gray-700">+1 (954) 818-5739</span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-6 h-6 flex items-center justify-center mr-4">
+                  <i className="ri-mail-line text-gray-700"></i>
                 </div>
-                <div className="flex items-start">
-                  <div className="w-6 h-6 flex items-center justify-center mr-4 mt-1">
-                    <i className="ri-map-pin-line text-gray-700"></i>
-                  </div>
-                  <div className="text-gray-700">
-                    <div>10200 NW 25th St Suite: A100</div>
-                    <div>Doral, FL 33172</div>
-                  </div>
+                <span className="text-gray-700">emmanuelarealtor@outlook.com</span>
+              </div>
+              <div className="flex items-start">
+                <div className="w-6 h-6 flex items-center justify-center mr-4 mt-1">
+                  <i className="ri-map-pin-line text-gray-700"></i>
+                </div>
+                <div className="text-gray-700">
+                  <div>10200 NW 25th St Suite: A100</div>
+                  <div>Doral, FL 33172</div>
                 </div>
               </div>
             </div>
-            <div>
-              <form 
-                id="contact-form"
-                action="https://formspree.io/f/xldnrvjz" 
-                method="POST"
-                className="space-y-6"
-              >
-                <div>
-                  <input
-                    type="text"
-                    name="nombre"
-                    placeholder="Tu nombre completo"
-                    required
-                    className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 placeholder-gray-500"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Tu correo electrónico"
-                    required
-                    className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 placeholder-gray-500"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="tel"
-                    name="telefono"
-                    placeholder="Tu número de teléfono"
-                    className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 placeholder-gray-500"
-                  />
-                </div>
-                <div>
-                  <select
-                    name="tipo_servicio"
-                    required
-                    className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 pr-8"
-                  >
-                    <option value="">Selecciona el tipo de servicio</option>
-                    <option value="compra">Compra de propiedad</option>
-                    <option value="venta">Venta de propiedad</option>
-                    <option value="consultoria">Consultoría inmobiliaria</option>
-                    <option value="otro">Otro</option>
-                  </select>
-                </div>
-                <div>
-                  <textarea
-                    name="mensaje"
-                    placeholder="Cuéntame más sobre lo que necesitas..."
-                    rows={4}
-                    maxLength={500}
-                    className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 placeholder-gray-500 resize-none"
-                  ></textarea>
-                  <div className="text-sm text-gray-500 mt-2">Máximo 500 caracteres</div>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-gray-800 hover:bg-gray-700 text-white py-4 rounded-lg font-semibold transition-colors duration-300 whitespace-nowrap cursor-pointer"
+          </div>
+          <div>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <input
+                  type="text"
+                  name="nombre"
+                  placeholder="Tu nombre completo"
+                  required
+                  className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 placeholder-gray-500"
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Tu correo electrónico"
+                  required
+                  className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 placeholder-gray-500"
+                />
+              </div>
+              <div>
+                <input
+                  type="tel"
+                  name="telefono"
+                  placeholder="Tu número de teléfono"
+                  className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 placeholder-gray-500"
+                />
+              </div>
+              <div>
+                <select
+                  name="tipo_servicio"
+                  required
+                  className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 pr-8"
                 >
-                  Enviar Mensaje
-                </button>
-              </form>
-            </div>
+                  <option value="">Selecciona el tipo de servicio</option>
+                  <option value="compra">Compra de propiedad</option>
+                  <option value="venta">Venta de propiedad</option>
+                  <option value="consultoria">Consultoría inmobiliaria</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+              <div>
+                <textarea
+                  name="mensaje"
+                  placeholder="Cuéntame más sobre lo que necesitas..."
+                  rows={4}
+                  maxLength={500}
+                  className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 placeholder-gray-500 resize-none"
+                ></textarea>
+                <div className="text-sm text-gray-500 mt-2">Máximo 500 caracteres</div>
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-gray-800 hover:bg-gray-700 text-white py-4 rounded-lg font-semibold transition-colors duration-300 whitespace-nowrap cursor-pointer"
+              >
+                Enviar Mensaje
+              </button>
+
+              {/* Mensajes de estado */}
+              {submitted && (
+                <p className="text-green-600 font-medium mt-4">✅ Tu mensaje fue enviado correctamente.</p>
+              )}
+              {error && (
+                <p className="text-red-600 font-medium mt-4">❌ Ocurrió un error. Inténtalo de nuevo.</p>
+              )}
+            </form>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
       {/* Footer */}
       <footer className="bg-white border-t border-gray-200 text-gray-800 py-8">
