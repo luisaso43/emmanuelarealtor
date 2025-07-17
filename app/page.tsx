@@ -200,7 +200,7 @@ export default function Home() {
 <section id="contacto" className="py-20 bg-gradient-to-r from-gray-50 to-gray-100">
   <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
     <div>
-      <h2 className="text-4xl font-light mb-6 text-gray-800">Ponte en contacto conmigo</h2>
+      <h2 className="text-4xl font-light mb-6 text-gray-800">Contáctame ahora</h2>
       <p className="text-lg text-gray-700 mb-2">
         📍 10200 NW 25th St Suite: A100<br />
         Doral, FL 33172
