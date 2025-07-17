@@ -212,7 +212,7 @@ export default function Home() {
             <div>
               <form 
                 id="contact-form"
-                action="https://formspree.io/f/your-form-id" 
+                action="https://formspree.io/f/xldnrvjz" 
                 method="POST"
                 className="space-y-6"
               >
