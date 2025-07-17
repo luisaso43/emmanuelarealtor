@@ -1,10 +1,12 @@
-// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  output: "export",
   images: {
-    domains: ['example.com'],
+    unoptimized: true,
   },
-}
+  typescript: {
+    // ignoreBuildErrors: true,
+  },
+};
 
 module.exports = nextConfig;
