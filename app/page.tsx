@@ -239,10 +239,10 @@ export default function Home() {
         className="w-full p-4 bg-white border border-gray-300 rounded-lg focus:border-gray-700 focus:outline-none text-gray-800 pr-8"
       >
         <option value="">Selecciona el tipo de servicio</option>
-        <option value="compra">Compra de propiedad</option>
-        <option value="venta">Venta de propiedad</option>
+        <option value="compra">Compra</option>
+        <option value="venta">Venta</option>
         <option value="renta">Renta</option>
-        <option value="invertir">Invertir en Florida</option>
+        <option value="invertir">Invertir</option>
       </select>
       <textarea
         name="mensaje"
