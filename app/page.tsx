@@ -241,8 +241,8 @@ export default function Home() {
         <option value="">Selecciona el tipo de servicio</option>
         <option value="compra">Compra de propiedad</option>
         <option value="venta">Venta de propiedad</option>
-        <option value="consultoria">Consultoría inmobiliaria</option>
-        <option value="otro">Otro</option>
+        <option value="renta">Renta</option>
+        <option value="invertir">Invertir en Florida</option>
       </select>
       <textarea
         name="mensaje"
