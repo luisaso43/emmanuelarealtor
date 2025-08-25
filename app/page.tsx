@@ -79,14 +79,22 @@ export default function Home() {
           style={{ backgroundImage: `url('https://readdy.ai/api/search-image?query=Modern%20luxury%20house%20interior%20with%20floor-to-ceiling%20windows%2C%20contemporary%20furniture%2C%20open%20space%20living%20room%20with%20natural%20lighting%2C%20minimalist%20design%2C%20neutral%20colors%2C%20high-end%20finishes%2C%20spacious%20layout%2C%20premium%20real%20estate%20photography%2C%20bright%20and%20airy%20atmosphere%2C%20sophisticated%20home%20decor&width=1920&height=1080&seq=modern-house-interior&orientation=landscape')` }}
         />
         <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative z-10 text-center space-x-4">
-          <h1 className={`text-5xl md:text-7xl lg:text-8xl font-light text-white transition-all duration-1000 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ fontFamily: 'var(--font-poppins)' }}>
+        <div className="relative z-10 text-center">
+          <h1
+            className={`text-5xl md:text-7xl lg:text-8xl font-light text-white transition-all duration-1000 transform ${
+              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+            style={{ fontFamily: 'var(--font-poppins)' }}
+          >
             Emmanuela Suarez
           </h1>
-          <div className="mt-8 flex justify-center space-x-4">
+          {/* Botones adaptados para móvil */}
+          <div className="mt-8 flex flex-col md:flex-row justify-center gap-4 px-6">
             <button
               onClick={() => scrollToSection('contacto')}
-              className={`px-8 py-4 bg-gray-800 hover:bg-gray-700 text-white rounded-full font-medium transition-all duration-500 transform hover:scale-105 cursor-pointer whitespace-nowrap ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              className={`w-full md:w-auto px-8 py-4 bg-gray-800 hover:bg-gray-700 text-white rounded-full font-medium transition-all duration-500 transform hover:scale-105 cursor-pointer whitespace-nowrap ${
+                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
             >
               Comienza Ahora
             </button>
@@ -94,7 +102,9 @@ export default function Home() {
               href="https://emmanuelasuarez.sef.mlsmatrix.com/Matrix/Public/?L=1&ap=SCH"
               target="_blank"
               rel="noopener noreferrer"
-              className={`px-8 py-4 bg-gray-700 hover:bg-gray-600 text-white rounded-full font-medium transition-all duration-500 transform hover:scale-105 cursor-pointer whitespace-nowrap ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              className={`w-full md:w-auto px-8 py-4 bg-gray-700 hover:bg-gray-600 text-white rounded-full font-medium transition-all duration-500 transform hover:scale-105 cursor-pointer whitespace-nowrap ${
+                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
             >
               Explora Propiedades
             </a>
