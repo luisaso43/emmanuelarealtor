@@ -290,7 +290,9 @@ export default function Home() {
           <p className="mt-6 text-gray-500 text-sm">
             © {new Date().getFullYear()} Emmanuela Realtor — Todos los derechos reservados
           </p>
-          <p><a href="privacy.html" target="_blank">Privacy Policy</a></p>
+         <a href="/privacy" target="_blank" rel="noopener noreferrer">
+  Privacy Policy
+</a>
         </div>
       </footer>
     </main>
