@@ -198,8 +198,8 @@ export default function Home() {
           <div>
             <h2 className="text-4xl font-light mb-6 text-gray-800">Contáctame ahora</h2>
             <p className="text-lg text-gray-700 mb-2">
-              📍 10200 NW 25th St Suite: A100<br />
-              Doral, FL 33172
+              📍 7791 NW 46th Street, Suite 417 <br />
+              Doral, FL 33166
             </p>
             <p className="text-lg text-gray-700 mb-2">
               📞 <a href="tel:+19548185739" className="text-gray-800 underline">+1 (954) 818-5739</a>
